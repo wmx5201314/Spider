@@ -12,7 +12,7 @@ BOT_NAME = 'Trends_google'
 SPIDER_MODULES = ['Trends_google.spiders']
 NEWSPIDER_MODULE = 'Trends_google.spiders'
 
-REDIS_HOST = 'localhost'
+REDIS_HOST = '124.71.41.168'
 REDIS_PORT = 6379
 LOG_LEVEL="WARNING"
 
@@ -30,7 +30,7 @@ SCHEDULER_QUEUE_CLASS = "scrapy_redis.queue.SpiderPriorityQueue"
 ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-CONCURRENT_REQUESTS = 1
+CONCURRENT_REQUESTS = 8
 
 
 RETRY_ENABLED = True  #打开重试开关

@@ -19,7 +19,7 @@ class TrendsGooglePipeline:
             keyword.append(item["keyword"])
 
         data=pd.DataFrame.from_dict({"keyword":keyword,"time":item["time"],"value":item["value"]})
-
+	
         if not os.path.exists("data/"+item["keyword"]):
             os.mkdir("data/"+item["keyword"])
         data.to_excel("data/"+item["keyword"]+"/"+item["keyword"]+item["time"][0].replace("/","")+".xlsx")

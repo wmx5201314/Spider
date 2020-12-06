@@ -79,8 +79,6 @@ class TrendsGoogleDownloaderMiddleware:
         response = requests.get(
             "http://api.ipproxy.info:8422/api/getIp?type=1&num=30&dataType=0&lineSeparator=0&noDuplicate=0&singleIp=0&unbindTime=180&orderId=O20120422034031928148&time=1607226654&sign=cc3eacc6f1d32ca48bf7e610a6834367&pid=1001006")
         get_time=time.time()
-        print(response.text)
-        print(response.status_code,"状态码")
         if response.status_code==200:
             try:
                 content_json =json.loads(response.text)
@@ -92,7 +90,6 @@ class TrendsGoogleDownloaderMiddleware:
                     ip = i['ip']
                     port = i['port']
                     proxy_ips.append("http://"+ip + ":" + str(port))
-                print("这是返回IP",proxy_ips)
                 return {get_time:proxy_ips}
             except Exception as e:
                 print("api访问状态200，但是json解析错误，请检查ipset账号，或者是否在白名单，结果：",response.text)
@@ -106,6 +103,10 @@ class TrendsGoogleDownloaderMiddleware:
     def return_ip(self):
         if len(self.proxy_data)==0:
             self.proxy_data=self.get_ip()
+        if len(list(self.proxy_data.keys()))==0:
+            print("休息5秒")
+            time.sleep(5)
+            self.proxy_data = self.get_ip()
         get_time=list(self.proxy_data.keys())[0]
         now_time=time.time()
         if now_time-float(get_time)>120:
@@ -117,7 +118,7 @@ class TrendsGoogleDownloaderMiddleware:
         #     proxy_ip =  self.get_ip() # 这里需要导入那个函数
         # ruselt_ip=self.return_ip(proxy_ip)
         request.meta['proxy'] = self.return_ip()
-        # print(request.meta['proxy'])
+        #print("这是代理",request.meta['proxy'])
         # request.meta['proxy'] ="47.241.22.26:14918"
         # print(request.meta)
 
