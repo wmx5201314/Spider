@@ -1,0 +1,95 @@
+2020-12-06 14:25:12 [py.warnings] WARNING: /usr/local/lib64/python3.6/site-packages/scrapy/spiders/__init__.py:82: UserWarning: Spider.make_requests_from_url method is deprecated: it will be removed and not be called by the default Spider.start_requests method in future Scrapy releases. Please override Spider.start_requests method instead.
+  "Spider.make_requests_from_url method is deprecated: "
+
+2020-12-06 14:25:13 [py.warnings] WARNING: /usr/local/lib64/python3.6/site-packages/scrapy/spiders/__init__.py:82: UserWarning: Spider.make_requests_from_url method is deprecated: it will be removed and not be called by the default Spider.start_requests method in future Scrapy releases. Please override Spider.start_requests method instead.
+  "Spider.make_requests_from_url method is deprecated: "
+
+2020-12-06 14:25:15 [py.warnings] WARNING: /usr/local/lib64/python3.6/site-packages/scrapy/spiders/__init__.py:82: UserWarning: Spider.make_requests_from_url method is deprecated: it will be removed and not be called by the default Spider.start_requests method in future Scrapy releases. Please override Spider.start_requests method instead.
+  "Spider.make_requests_from_url method is deprecated: "
+
+2020-12-06 14:25:20 [py.warnings] WARNING: /usr/local/lib64/python3.6/site-packages/scrapy/spiders/__init__.py:82: UserWarning: Spider.make_requests_from_url method is deprecated: it will be removed and not be called by the default Spider.start_requests method in future Scrapy releases. Please override Spider.start_requests method instead.
+  "Spider.make_requests_from_url method is deprecated: "
+
+Scrapy 2.4.1 - no active project
+
+Unknown command: crawl
+
+Use "scrapy" to see available commands
+Scrapy 2.4.1 - no active project
+
+Unknown command: crawl
+
+Use "scrapy" to see available commands
+Scrapy 2.4.1 - no active project
+
+Unknown command: crawl
+
+Use "scrapy" to see available commands
+Scrapy 2.4.1 - no active project
+
+Unknown command: crawl
+
+Use "scrapy" to see available commands
+Scrapy 2.4.1 - no active project
+
+Unknown command: crawl
+
+Use "scrapy" to see available commands
+Traceback (most recent call last):
+  File "/usr/local/lib64/python3.6/site-packages/scrapy/spiderloader.py", line 75, in load
+    return self._spiders[spider_name]
+KeyError: 'Thend_spider'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/bin/scrapy", line 11, in <module>
+    sys.exit(execute())
+  File "/usr/local/lib64/python3.6/site-packages/scrapy/cmdline.py", line 145, in execute
+    _run_print_help(parser, _run_command, cmd, args, opts)
+  File "/usr/local/lib64/python3.6/site-packages/scrapy/cmdline.py", line 100, in _run_print_help
+    func(*a, **kw)
+  File "/usr/local/lib64/python3.6/site-packages/scrapy/cmdline.py", line 153, in _run_command
+    cmd.run(args, opts)
+  File "/usr/local/lib64/python3.6/site-packages/scrapy/commands/crawl.py", line 22, in run
+    crawl_defer = self.crawler_process.crawl(spname, **opts.spargs)
+  File "/usr/local/lib64/python3.6/site-packages/scrapy/crawler.py", line 191, in crawl
+    crawler = self.create_crawler(crawler_or_spidercls)
+  File "/usr/local/lib64/python3.6/site-packages/scrapy/crawler.py", line 224, in create_crawler
+    return self._create_crawler(crawler_or_spidercls)
+  File "/usr/local/lib64/python3.6/site-packages/scrapy/crawler.py", line 228, in _create_crawler
+    spidercls = self.spider_loader.load(spidercls)
+  File "/usr/local/lib64/python3.6/site-packages/scrapy/spiderloader.py", line 77, in load
+    raise KeyError(f"Spider not found: {spider_name}")
+KeyError: 'Spider not found: Thend_spider'
+2020-12-06 14:36:27 [py.warnings] WARNING: /usr/local/lib64/python3.6/site-packages/scrapy/spiders/__init__.py:82: UserWarning: Spider.make_requests_from_url method is deprecated: it will be removed and not be called by the default Spider.start_requests method in future Scrapy releases. Please override Spider.start_requests method instead.
+  "Spider.make_requests_from_url method is deprecated: "
+
+-----------------开始获取
+Nexo20190701.xlsx   ok
+Nexo20170101.xlsx   ok
+Energy Web Token  没有数据
+Energy Web Token20170701.xlsx   ok
+Energy Web Token  没有数据
+Energy Web Token  没有数据
+Energy Web Token  没有数据
+Energy Web Token20150101.xlsx   ok
+Energy Web Token  没有数据
+Energy Web Token  没有数据
+Energy Web Token  没有数据
+Augur20130701.xlsx   ok
+Augur20130101.xlsx   ok
+Energy Web Token  没有数据
+Augur20140101.xlsx   ok
+2020-12-06 14:37:29 [py.warnings] WARNING: /usr/local/lib64/python3.6/site-packages/scrapy/spiders/__init__.py:82: UserWarning: Spider.make_requests_from_url method is deprecated: it will be removed and not be called by the default Spider.start_requests method in future Scrapy releases. Please override Spider.start_requests method instead.
+  "Spider.make_requests_from_url method is deprecated: "
+
+2020-12-06 14:37:36 [py.warnings] WARNING: /usr/local/lib64/python3.6/site-packages/scrapy/spiders/__init__.py:82: UserWarning: Spider.make_requests_from_url method is deprecated: it will be removed and not be called by the default Spider.start_requests method in future Scrapy releases. Please override Spider.start_requests method instead.
+  "Spider.make_requests_from_url method is deprecated: "
+
+2020-12-06 14:37:50 [py.warnings] WARNING: /usr/local/lib64/python3.6/site-packages/scrapy/spiders/__init__.py:82: UserWarning: Spider.make_requests_from_url method is deprecated: it will be removed and not be called by the default Spider.start_requests method in future Scrapy releases. Please override Spider.start_requests method instead.
+  "Spider.make_requests_from_url method is deprecated: "
+
+2020-12-06 14:37:58 [py.warnings] WARNING: /usr/local/lib64/python3.6/site-packages/scrapy/spiders/__init__.py:82: UserWarning: Spider.make_requests_from_url method is deprecated: it will be removed and not be called by the default Spider.start_requests method in future Scrapy releases. Please override Spider.start_requests method instead.
+  "Spider.make_requests_from_url method is deprecated: "
+

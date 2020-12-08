@@ -74,6 +74,8 @@ class TrendsGoogleDownloaderMiddleware:
         return s
     def __init__(self):
         self.proxy_data={}
+        self.proxy_times=0
+        self.proxy_ip=""
     def get_ip(self):
         print("-----------------开始获取")
         response = requests.get(
@@ -101,7 +103,7 @@ class TrendsGoogleDownloaderMiddleware:
 
         # print(proxy_ips)
     def return_ip(self):
-        if len(self.proxy_data)==0:
+        if self.proxy_data is None or len(self.proxy_data)==0:
             self.proxy_data=self.get_ip()
         if len(list(self.proxy_data.keys()))==0:
             print("休息5秒")
@@ -112,12 +114,19 @@ class TrendsGoogleDownloaderMiddleware:
         if now_time-float(get_time)>120:
             print("获取超过两分钟了，重新获取ip池")
             self.proxy_data = self.get_ip()
+            get_time=list(self.proxy_data.keys())[0]
         return random.sample(self.proxy_data[get_time], 1)[0]
     def process_request(self, request, spider):
         # if 'proxy' not in request.meta:
         #     proxy_ip =  self.get_ip() # 这里需要导入那个函数
         # ruselt_ip=self.return_ip(proxy_ip)
-        request.meta['proxy'] = self.return_ip()
+        if self.proxy_times==0:
+            self.proxy_ip=self.return_ip()
+            #request.meta['proxy'] = self.return_ip()
+        self.proxy_times+=1
+        if self.proxy_times>=4:
+            self.proxy_ip=self.return_ip()
+        request.meta['proxy'] = self.proxy_ip
         #print("这是代理",request.meta['proxy'])
         # request.meta['proxy'] ="47.241.22.26:14918"
         # print(request.meta)
@@ -126,9 +135,9 @@ class TrendsGoogleDownloaderMiddleware:
 
     def process_response(self, request, response, spider):
         if response.status!=200:
-            print("这个状态不是正常，休息2秒重新请求")
-            time.sleep(2)
-            self.process_request(request,spider)
+            print("这个状态不是正常，休息10秒重新请求")
+            time.sleep(10)
+            #self.process_request(request,spider)
             # print(response.status)
             print(response.text)
         # Called with the response returned from the downloader.

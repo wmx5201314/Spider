@@ -15,7 +15,7 @@ class TrendSpiderSpider(RedisSpider):
     name = 'Trend_spider'
     allowed_domains = ['google.com']
     # start_urls = ['http://trends.google.com/']
-    redis_key = 'explore_url'
+    redis_key = 'explore_url_ok'
     # rules = (
     #     Rule(LinkExtractor(allow=r'.*'), callback='parse_item', follow=True),
     # )
